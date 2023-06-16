@@ -1,0 +1,211 @@
+.sketchpad{
+    background-color: #F55247;
+    padding: 0px 80px;
+}
+
+#grid{
+
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 1px;
+    background-color: #ACB5BF;
+    width: 519px;
+    height: 350px;
+}
+
+#value{
+    margin: 0px;
+}
+
+.container > *{
+
+    /* changes size of grid pixels */
+    border: grey;
+    background-color: #DADBDB;
+
+}
+
+#gridSize{
+    accent-color: #333333;
+}
+
+.grid_body{
+
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    background-color: #FAEDDD;
+    position: relative
+}
+
+.header{
+    font-family: 'Lobster', 'sans-sherif';
+    font-size: 25px;
+    color: #FFED6C;
+    display: flex;
+    justify-content: center;
+    background-color: #F55247;
+    border-radius: 20px 20px 0px 0px;
+    height: 80px;
+
+
+
+}
+
+.header, .button_container{
+    width: 679px; /* width of grid + padding */
+
+}
+
+
+.button_container{
+    font-size: 15px;
+    text-align: center;
+    background-color: #F55247;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    height: 80px;
+    
+
+
+}
+
+.footer{
+
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    bottom: 15px;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buttons > button{
+    height: 25px;
+    background-color: white;
+    border-radius: 10%;
+    border: solid;
+
+}
+
+
+#color{
+    background-color: #FFED6C;
+}
+
+.grid_density{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.button_container > .button{
+    border: dotted brown;
+    border-width: 3px;
+    height: 70px;
+    width: 80px;;
+    border-radius: 50%;
+    background-color: white;
+   
+
+}
+
+.button_container > .button:hover{
+
+    transform: rotate(180deg);
+
+}
+
+
+a { 
+    color: inherit; 
+} 
+
+@media screen and (min-width: 375px) and (max-width:480px){
+    #grid{
+
+        width: 250px;
+        height: 300px;
+    }
+    
+    .header, .button_container{
+        width: 330px; /* width of grid + padding */
+    
+    }
+    
+    .sketchpad{
+        background-color: #F55247;
+        padding: 0px 40px;
+    }
+
+    .buttons > button{
+        height: 20px;
+        font-size: 12px;
+    
+    }
+    .button_container{
+        height: 100px;
+    }
+    .button{
+        display: none;
+    }
+
+    .buttons{
+        height: 10px;
+        margin-top: 25px;
+    }
+    .footer{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (min-width: 571px) and (max-width:685px){
+    #grid{
+
+        width: 400px;
+        height: 300px;
+    }
+
+    .header, .button_container{
+        width: 560px; 
+    
+    }
+
+
+}
+
+@media screen and (min-width: 481px) and (max-width:570px){
+    #grid{
+
+        width: 300px;
+        height: 250px;
+    }
+
+    .header, .button_container{
+        width: 460px; 
+    
+    }
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/067340eff9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header"><h3>Etch-a-sketch</h3></div>
+    <div class="grid_body">
+        <div class="sketchpad">
+            <div id="grid" class="container"></div>
+        </div>
+    </div>
+    <div class="button_container">
+            <div class="button left"></div>
+            <div class="grid_density">
+                <input type="range" id="gridSize" min="1" max="32" value="16">
+                <p id="value">16 x 16</p>
+            </div>
+            <div class="buttons">
+                <input type="color" id="color_mode" name="color_mode" value="#333333">
+                <button id="color" class="color color_mode">Color</button>
+                <button id="retro" class="color retro">Retro</button>
+                <button id="eraser" class="color eraser">Eraser</button>
+                <button class="clear">Clear</button>
+            </div>
+            <div class="button right"></div>
+    </div>
+
+    <footer class="footer">Copyright © asiddiq1  <a href="https://github.com/asiddiq1" target="_blank">
+        <i class="fa-brands fa-github" aria-hidden="true"></i></a></footer>
+</body>
+
+</html>
