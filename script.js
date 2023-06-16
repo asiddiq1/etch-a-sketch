@@ -5,38 +5,18 @@ function createGrid(){
     let value = document.querySelector('#value');
     let input = document.querySelector('#gridSize');
     let grid = document.querySelector('#grid');
-    for (let i = 0; i < 256; i++){
 
-        let cell = document.createElement("div");
-        cell.id = "cell";
-        cell.offsetWidth = (grid.offsetWidth - 15)/16;  //remove gap and divide by of cols
-        cell.offsetHeight = (grid.offsetHeight - 15)/16;
-        grid.appendChild(cell);
-    
-    }
-    sketchColor();
+    gridSize(16, grid);
 
 
-    input.addEventListener("input", (event) => {
+    input.addEventListener("input", (event) => { //changed size of grid
         value.textContent = `${event.target.value} x ${event.target.value}`;
         let grid = document.querySelector('#grid');
         grid.style["grid-template-columns"] = `repeat(${event.target.value}, 1fr)`;
         grid.style["grid-template-rows"] = `repeat(${event.target.value}, 1fr)`;
-        let gridSize = event.target.value * event.target.value;
         grid.innerHTML = '';
-        let gap = event.target.value - 1;
-   
-
-        for (let i = 0; i < gridSize; i++){
-
-            let cell = document.createElement("div");
-            cell.offsetWidth = (grid.offsetWidth - gap)/event.target.value; 
-            cell.offsetHeight = (grid.offsetHeight - gap)/event.target.value;
-            cell.id = "cell";
-            grid.appendChild(cell);
-        }
-
-        sketchColor();
+        let size = event.target.value;
+        gridSize(size, grid);
 
         
       });
@@ -44,7 +24,23 @@ function createGrid(){
       
 }
 
-//onclick enable mouse over
+function gridSize(size, grid){
+    let gridSize = size * size; 
+    let gap = size - 1; 
+    for (let i = 0; i < gridSize; i++){
+        let cell = document.createElement("div");
+        cell.id = "cell";
+        cell.offsetWidth = (grid.offsetWidth - gap)/size;  //remove gap and divide by of cols
+        cell.offsetHeight = (grid.offsetHeight - gap)/size;
+        grid.appendChild(cell);
+    
+    }
+    sketchColor();
+
+}
+
+
+//onclick enable mouseover
 
 function sketchColor(iseraser = false, isretro = false){
     let drag = false; 
@@ -139,5 +135,6 @@ function clearGrid(){
     }); 
 }
 
-
-createGrid();
+window.onload = () => {
+    createGrid();
+}
